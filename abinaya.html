@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abinaya — Authority Content Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0d0d;
+    --white: #fafaf8;
+    --gray-100: #f5f4f1;
+    --gray-200: #e8e6e0;
+    --gray-400: #a8a69f;
+    --gray-600: #6b6963;
+    --ink: #1a1917;
+    --accent: #c8a97e;
+    --accent-deep: #a0804f;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* SECTIONS */
+  section { padding: 6rem 4rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 8rem;
+    background: var(--white);
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 1.25rem;
+  }
+  .hero-headline {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--accent-deep);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--ink);
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #2d2b28; transform: translateY(-1px); }
+  .btn-outline {
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: 1.5px solid var(--gray-200);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .btn-outline:hover { border-color: var(--ink); transform: translateY(-1px); }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .stat-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .stat-card {
+    background: var(--gray-100);
+    padding: 1.5rem;
+    border: 1px solid var(--gray-200);
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+  }
+  .niche-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--gray-200);
+    color: var(--gray-600);
+    background: var(--white);
+  }
+
+  /* SECTION TITLES */
+  .section-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+  }
+  .section-title em { font-style: italic; color: var(--accent-deep); }
+  .section-intro {
+    font-size: 1rem;
+    color: var(--gray-600);
+    max-width: 560px;
+    line-height: 1.75;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-200);
+    margin: 0;
+  }
+
+  /* PHILOSOPHY */
+  #philosophy { background: var(--gray-100); }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 3rem;
+    background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+  }
+  .philosophy-item {
+    background: var(--gray-100);
+    padding: 2.5rem 2rem;
+  }
+  .philosophy-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    color: var(--gray-200);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .philosophy-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .philosophy-body {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+  }
+
+  /* PROCESS */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    margin-top: 3.5rem;
+    border: 1px solid var(--gray-200);
+  }
+  .process-step {
+    padding: 1.75rem 1.25rem;
+    border-right: 1px solid var(--gray-200);
+    position: relative;
+  }
+  .process-step:last-child { border-right: none; }
+  .step-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.85rem;
+    color: var(--accent-deep);
+    margin-bottom: 0.75rem;
+  }
+  .step-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .step-desc {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  /* WORK / SCRIPTS */
+  #work { background: var(--white); }
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .script-card {
+    border: 1px solid var(--gray-200);
+    padding: 2rem;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .script-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .script-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.25s;
+  }
+  .script-card:hover::before { transform: scaleY(1); }
+  .card-niche {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 0.75rem;
+  }
+  .card-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+  }
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--gray-600);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+  .card-hook {
+    background: var(--gray-100);
+    border-left: 2px solid var(--accent);
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gray-600);
+    margin-bottom: 1.25rem;
+  }
+  .card-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .card-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.25rem 0.6rem;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    border: 1px solid var(--gray-200);
+  }
+
+  /* WHAT'S DIFFERENT TABLE */
+  #approach { background: var(--gray-100); }
+  .diff-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+  }
+  .diff-table th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .diff-table td {
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--ink);
+    vertical-align: top;
+  }
+  .diff-table tr:last-child td { border-bottom: none; }
+  .diff-table .col-generic {
+    color: var(--gray-400);
+    text-decoration: line-through;
+    text-decoration-color: var(--gray-200);
+  }
+  .diff-table .col-mine { color: var(--ink); font-weight: 500; }
+  .diff-table tr:hover td { background: var(--white); }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .service-item {
+    padding: 2rem;
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+  }
+  .service-icon {
+    width: 40px; height: 40px;
+    background: var(--gray-100);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    color: var(--accent-deep);
+  }
+  .service-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    line-height: 1.65;
+  }
+
+  /* CTA */
+  #cta {
+    background: var(--ink);
+    color: var(--white);
+    text-align: center;
+    padding: 8rem 4rem;
+  }
+  #cta .section-title { color: var(--white); }
+  #cta .section-title em { color: var(--accent); }
+  #cta .section-intro { color: rgba(255,255,255,0.6); margin: 1.5rem auto 2.5rem; max-width: 500px; }
+  .btn-light {
+    padding: 0.85rem 2.25rem;
+    background: var(--white);
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-light:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(13,13,13,0.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--white);
+    max-width: 680px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 1.25rem; right: 1.25rem;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--gray-600);
+    line-height: 1;
+  }
+  .modal-eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent-deep); margin-bottom: 0.5rem;
+  }
+  .modal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem; color: var(--ink); margin-bottom: 1.5rem; line-height: 1.2;
+  }
+  .modal-section { margin-bottom: 1.5rem; }
+  .modal-section h4 {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.75rem;
+  }
+  .modal-section p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; }
+  .script-preview {
+    background: var(--gray-100);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: var(--ink);
+    white-space: pre-line;
+  }
+  .why-list { list-style: none; padding: 0; }
+  .why-list li {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    font-size: 0.875rem; color: var(--gray-600); line-height: 1.6;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .why-list li:last-child { border-bottom: none; }
+  .why-check { color: var(--accent-deep); font-weight: 600; flex-shrink: 0; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .philosophy-grid, .process-steps { grid-template-columns: 1fr; }
+    .process-step { border-right: none; border-bottom: 1px solid var(--gray-200); }
+    .work-grid, .services-grid { grid-template-columns: 1fr; }
+    #cta { padding: 5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Abinaya D</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-label">Authority Content Strategist & Script Writer</p>
+      <h1 class="hero-headline">Content that builds <em>trust,</em> not just traffic.</h1>
+      <p class="hero-sub">I help founders, clinics, educators, and brands turn expertise into high-retention content that audiences remember, share, and act on.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View My Work</a>
+        <a href="#cta" class="btn-outline">Let's Connect</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-block">
+        <div class="stat-card">
+          <div class="stat-num">14+</div>
+          <div class="stat-label">Authority scripts written</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Industries explored</div>
+        </div>
+        <div class="stat-card" style="grid-column: span 2;">
+          <div class="stat-label" style="margin-bottom:0.75rem;">Niches covered</div>
+          <div class="niche-tags">
+            <span class="tag">Healthcare</span>
+            <span class="tag">Psychology</span>
+            <span class="tag">Education</span>
+            <span class="tag">Personal Brand</span>
+            <span class="tag">Founder Storytelling etc..</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="container">
+    <p class="section-eyebrow">Content Philosophy</p>
+    <h2 class="section-title">Authority is built through <em>three things</em></h2>
+    <p class="section-intro">Most content gets attention. Very little content builds trust. I focus on combining the three elements that make content an asset, not just a post.</p>
+    <div class="philosophy-grid">
+      <div class="philosophy-item">
+        <div class="philosophy-num">01</div>
+        <h3 class="philosophy-heading">Trust</h3>
+        <p class="philosophy-body">People buy from brands they trust. Trust is built through consistency, credibility, and honest communication not clever copy alone.</p>
+      </div>
+      <div class="philosophy-item">
+        <div class="philosophy-num">02</div>
+        <h3 class="philosophy-heading">Positioning</h3>
+        <p class="philosophy-body">People remember brands that stand for something. Positioning defines how your brand occupies a distinct place in the audience's mind before they ever see a price.</p>
+      </div>
+      <div class="philosophy-item">
+        <div class="philosophy-num">03</div>
+        <h3 class="philosophy-heading">Storytelling</h3>
+        <p class="philosophy-body">People connect with stories more than information. When your expertise is wrapped in a narrative, it travels, it gets saved, shared, and sent to a friend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <p class="section-eyebrow">How I Work</p>
+    <h2 class="section-title">From research to <em>ready-to-shoot</em> script</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-name">Research</div>
+        <p class="step-desc">Brand, audience, and industry deep-dive before writing a single word.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-name">Psychology</div>
+        <p class="step-desc">Identifying audience motivations, pain points, and hidden desires.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-name">Positioning</div>
+        <p class="step-desc">Defining how the brand should be perceived vs. competitors.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-name">Storytelling</div>
+        <p class="step-desc">Crafting narratives that create emotional resonance and recall.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <div class="step-name">Scripting</div>
+        <p class="step-desc">Structured, hook-first content built for retention and reach.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">06</div>
+        <div class="step-name">Delivery</div>
+        <p class="step-desc">Ready-to-use authority scripts with context and strategy notes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <p class="section-eyebrow">Selected Work</p>
+    <h2 class="section-title">Scripts that <em>build</em> authority</h2>
+    <p class="section-intro">Each project began with a brand audit, an authority gap analysis, and a positioning strategy, before a single script line was written.</p>
+    <div class="work-grid">
+
+      <div class="script-card" onclick="openModal('vyuga')">
+        <div class="card-niche">Dental Healthcare · Instagram Reels</div>
+        <h3 class="card-title">Vyuga Dental - Authority Content Strategy</h3>
+        <p class="card-desc">Repositioned a credible dental clinic from generic tip-content to authority-led storytelling, closing the virality gap without compromising healthcare compliance.</p>
+        <div class="card-hook">"If your gums bleed while brushing, your body is already warning you."</div>
+        <div class="card-tags">
+          <span class="card-tag">Hook Engineering</span>
+          <span class="card-tag">Healthcare Content</span>
+          <span class="card-tag">Myth-Busting</span>
+          <span class="card-tag">Shareability Strategy</span>
+        </div>
+      </div>
+
+      <div class="script-card" onclick="openModal('glodent')">
+        <div class="card-niche">Dental Healthcare · Chennai-Local</div>
+        <h3 class="card-title">Glodent Dental Care - Smile Authority Strategy</h3>
+        <p class="card-desc">Developed a full authority content system for a multi-specialty dental clinic, shifting from service explanation to curiosity-first storytelling with a Chennai-specific lens.</p>
+        <div class="card-hook">"These two patients started aligners on the same day. One finished in 7 months. The other needed 18."</div>
+        <div class="card-tags">
+          <span class="card-tag">Before/After Stories</span>
+          <span class="card-tag">Dentist Reacts</span>
+          <span class="card-tag">Local Audience</span>
+          <span class="card-tag">Smile Psychology</span>
+        </div>
+      </div>
+
+      <div class="script-card" onclick="openModal('mathumathi')">
+        <div class="card-niche">Psychology · Tamil Content</div>
+        <h3 class="card-title">Dr. Mathumathi - Human Behaviour Authority</h3>
+        <p class="card-desc">Repositioned a psychologist from advice-giver to Tamil Nadu's most trusted voice in human behaviour by using bilingual scripts designed for maximum save and share rates.</p>
+        <div class="card-hook">"Nee avangala miss pannala... You miss who you became when they were around."</div>
+        <div class="card-tags">
+          <span class="card-tag">Bilingual Scripting</span>
+          <span class="card-tag">Identity Content</span>
+          <span class="card-tag">Relationship Psychology</span>
+          <span class="card-tag">Contrarian Hooks</span>
+        </div>
+      </div>
+
+      <div class="script-card" onclick="openModal('iqia')">
+        <div class="card-niche">Education · Founder Storytelling</div>
+        <h3 class="card-title">IQ International Academy - Founder Authority</h3>
+        <p class="card-desc">Scripted authority and heritage reels for an edtech founder, blending Tamil and English to build emotional connection and institutional credibility for a 15-year-old brand.</p>
+        <div class="card-hook">"Concentration is not a personality trait. It's a skill."</div>
+        <div class="card-tags">
+          <span class="card-tag">Heritage Storytelling</span>
+          <span class="card-tag">Founder Narrative</span>
+          <span class="card-tag">Bilingual</span>
+          <span class="card-tag">Parent Audience</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- APPROACH TABLE -->
+<section id="approach">
+  <div class="container">
+    <p class="section-eyebrow">My Approach</p>
+    <h2 class="section-title">What makes authority content <em>different</em></h2>
+    <table class="diff-table">
+      <thead>
+        <tr>
+          <th>Generic Content</th>
+          <th>My Approach</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-generic">Focuses on posting frequency</td>
+          <td class="col-mine">Focuses on positioning and perception</td>
+        </tr>
+        <tr>
+          <td class="col-generic">Information-first</td>
+          <td class="col-mine">Psychology-first: what makes audiences feel, save, and share</td>
+        </tr>
+        <tr>
+          <td class="col-generic">Trend-chasing</td>
+          <td class="col-mine">Authority-driven: built on the brand's existing credibility</td>
+        </tr>
+        <tr>
+          <td class="col-generic">Surface-level storytelling</td>
+          <td class="col-mine">Strategic storytelling with a clear emotional architecture</td>
+        </tr>
+        <tr>
+          <td class="col-generic">Short-term attention</td>
+          <td class="col-mine">Long-term trust: content that compounds over time</td>
+        </tr>
+        <tr>
+          <td class="col-generic">Generic hooks ("5 tips")</td>
+          <td class="col-mine">Curiosity-engineered hooks that interrupt the scroll in under 2 seconds</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-eyebrow">Services</p>
+    <h2 class="section-title">What I can <em>help with</em></h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">✦</div>
+        <div class="service-name">Authority Content Writing</div>
+        <p class="service-desc">Scripts and content designed to convert existing expertise into trust-building, shareable media.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">◈</div>
+        <div class="service-name">Founder Storytelling</div>
+        <p class="service-desc">Personal brand narratives that build emotional connection and establish credible category leadership.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">▷</div>
+        <div class="service-name">Instagram Reel Scripts</div>
+        <p class="service-desc">Hook-first, retention-optimised short-form scripts built for the algorithm and the audience.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">◻</div>
+        <div class="service-name">Content Strategy</div>
+        <p class="service-desc">Structured content planning - pillars, series formats, and positioning not just a content calendar.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">◇</div>
+        <div class="service-name">Brand Positioning Support</div>
+        <p class="service-desc">Helping brands articulate their unique value in a way that separates them from a crowded market.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">⊕</div>
+        <div class="service-name">Heritage & Brand Storytelling</div>
+        <p class="service-desc">Brand journey, values, and identity content that builds emotional equity and long-term recall.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <p class="section-eyebrow" style="color: var(--accent);">Let's Work Together</p>
+    <h2 class="section-title">Ready to build authority, <em>not just content?</em></h2>
+    <p class="section-intro">Content should do more than get views. It should build trust, strengthen positioning, and make people remember your brand.</p>
+    <a href="mailto:your@email.com" class="btn-light">Let's Discuss Your Content</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Abinaya D · Authority Content Strategist</p>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/abinaya-d-a890293b6/">LinkedIn</a>
+    
+    <a href="mailto:abinayad042004@gmail.com">Email</a>
+    <a href="tel:+919342212195">Contact</a>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-vyuga" onclick="closeModal(event, 'vyuga')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect('vyuga')">×</button>
+    <p class="modal-eyebrow">Dental Healthcare · Instagram Reels</p>
+    <h2 class="modal-title">Vyuga Dental: Authority Content Strategy</h2>
+    <div class="modal-section">
+      <h4>The Challenge</h4>
+      <p>Vyuga Dental had strong clinical credibility but content that felt like a lecture - informative but structurally unable to travel. The hooks were slow, the format was tip-based, and the content wasn't giving audiences a reason to share.</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Strategy</h4>
+      <p>Closed the authority gap by reformatting existing clinical knowledge into curiosity-led, share-first content "warning" and "secret" style framing that triggers concern and saves without compromising healthcare compliance. Introduced four content pillars: Dental Secrets, Horror Stories, Myth-Busting, and Authority Reactions.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Sample Script : Bleeding Gums</h4>
+      <div class="script-preview">"If your gums bleed while brushing, your body is already warning you."
+
+Most people think bleeding gums are normal.
+They're not.
+
+Imagine seeing blood every day from your hand.
+You wouldn't ignore it.
+
+But when it comes from your gums, people wait for months.
+
+Here's what bleeding gums usually mean:
+→ Plaque buildup
+→ Early gum disease
+→ Inflammation
+
+The good news? At this stage, it's often completely reversible.
+The longer you wait, the more complicated treatment becomes.
+
+Follow Vyuga Dental for evidence-based dental advice.</div>
+    </div>
+    <div class="modal-section">
+      <h4>Why It Works</h4>
+      <ul class="why-list">
+        <li><span class="why-check">✓</span> Opens with a direct attention trigger instead of a slow intro</li>
+        <li><span class="why-check">✓</span> Uses a relatable comparison (bleeding hand) to make a clinical symptom feel urgent</li>
+        <li><span class="why-check">✓</span> Delivers accurate, compliance-safe information as the core payoff</li>
+        <li><span class="why-check">✓</span> Ends with reassurance and a low-pressure CTA</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-glodent" onclick="closeModal(event, 'glodent')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect('glodent')">×</button>
+    <p class="modal-eyebrow">Dental Healthcare · Chennai-Local</p>
+    <h2 class="modal-title">Glodent Dental Care — Smile Authority Strategy</h2>
+    <div class="modal-section">
+      <h4>The Challenge</h4>
+      <p>Glodent's content was answering questions the viewer hadn't asked yet — jumping to explanation before building curiosity. Hooks led with topics ("What are aligners?") instead of tension. Strong clinical credibility wasn't converting into reach.</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Strategy</h4>
+      <p>Repositioned Glodent as "The Smile Authority of Chennai" — shifting posture from neutral information source to opinionated trusted voice. Introduced local-specific content (Chennai coffee habits, IT employee dental patterns), a Dentist Reacts series, and before/after transformation storytelling.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Sample Script : Aligners</h4>
+      <div class="script-preview">"These two patients started aligners on the same day.
+One finished in 7 months. The other needed 18 months.
+Here's why.
+
+Most people think aligners work the same for everyone.
+They don't.
+
+The number of aligners depends on:
+→ Crowding
+→ Tooth movement needed
+→ Bite correction
+→ Treatment goals
+
+That's why copying someone's treatment timeline is impossible.
+Your smile is unique. Your treatment plan should be too.
+
+Comment 'SMILE' and we'll tell you if you're a suitable candidate."</div>
+    </div>
+    <div class="modal-section">
+      <h4>Why It Works</h4>
+      <ul class="why-list">
+        <li><span class="why-check">✓</span> Hook creates an immediate curiosity gap - same start, different outcome</li>
+        <li><span class="why-check">✓</span> Reframes a common misconception without being preachy</li>
+        <li><span class="why-check">✓</span> Ends with a low-friction CTA that converts attention into DMs</li>
+        <li><span class="why-check">✓</span> Builds trust before asking for a booking</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-mathumathi" onclick="closeModal(event, 'mathumathi')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect('mathumathi')">×</button>
+    <p class="modal-eyebrow">Psychology · Tamil Content</p>
+    <h2 class="modal-title">Dr. Mathumathi — Human Behaviour Authority</h2>
+    <div class="modal-section">
+      <h4>The Challenge</h4>
+      <p>Dr. Mathumathi's content was structurally capped — advice-based and informative, which is credibility-building but not reach-building. The content told people what to do instead of showing them why they already do what they do.</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Strategy</h4>
+      <p>Moved from the crowded "mental health tips" lane to the largely unclaimed category of human behaviour psychology — content that decodes why people think, love, and suffer. Introduced a five-part authority formula: Hook → Uncomfortable Truth → Psychology → Actionable Insight → Reflection Question.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Sample Script — Why You Can't Forget Someone</h4>
+      <div class="script-preview">Hook: "Nee avangala miss pannala...
+You miss who you became when they were around."
+
+Namma miss panradhu andha person-a illa.
+Namma miss panradhu:
+→ Avanga kooda irundha namma version-a
+→ Namma imagine panna future-a
+→ Andha emotional comfort-a
+
+Namma brain, oru person-a vida...
+Andha person kudutha feelings-ah dhaan adhigama remember pannum.
+
+Real healing start aaguradhu eppo theriyuma?
+Andha feeling enga irundhu vandhuchu-nu purinjukka aarambikkum podhu.
+
+Are you missing the person…
+…or the version of yourself that existed with them?
+
+Save this if you need to hear it.</div>
+    </div>
+    <div class="modal-section">
+      <h4>Why It Works</h4>
+      <ul class="why-list">
+        <li><span class="why-check">✓</span> Contrarian opening reframes a familiar experience in a surprising way</li>
+        <li><span class="why-check">✓</span> "This is me" identity moment drives saves and shares</li>
+        <li><span class="why-check">✓</span> Psychology grounding reinforces clinical authority, not just wellness advice</li>
+        <li><span class="why-check">✓</span> Reflection question invites personal comment and deep engagement</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-iqia" onclick="closeModal(event, 'iqia')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect('iqia')">×</button>
+    <p class="modal-eyebrow">Education · Founder Storytelling</p>
+    <h2 class="modal-title">IQ International Academy — Founder Authority</h2>
+    <div class="modal-section">
+      <h4>The Challenge</h4>
+      <p>A 15-year-old education brand with 1 lakh+ trained students and 180+ franchise centres needed content that matched its institutional scale — without sounding like a corporate brochure. The founder's personal story was the untapped asset.</p>
+    </div>
+    <div class="modal-section">
+      <h4>The Strategy</h4>
+      <p>Scripted two formats: an Authority Reel (positioning the founder as an expert on child concentration) and a Heritage Storytelling Reel (the brand's journey as an emotional narrative). Both used bilingual Tamil-English delivery to connect deeply with parent audiences across Tamil Nadu.</p>
+    </div>
+    <div class="modal-section">
+      <h4>Sample — Authority Reel Opening</h4>
+      <div class="script-preview">"If your child gets distracted every few minutes...
+Adhu laziness-naala irukkanumnu illa.
+
+Concentration is not a personality trait. It's a skill.
+
+Reading maadhiri.
+Cycling maadhiri.
+Practice panna develop aagura skill.
+
+Inniku children niraya fast-moving reels and screen content consume pannuraanga.
+Appo classroom-la ukkandhu learn pannumbodhu, adhu slow-a irukku-nu brain feel pannum.
+
+Aana nalla vishayam enna-na...
+Concentration train panna mudiyum.
+
+At IQ International Academy, this is exactly what we build —
+one child at a time."</div>
+    </div>
+    <div class="modal-section">
+      <h4>Why It Works</h4>
+      <ul class="why-list">
+        <li><span class="why-check">✓</span> Opens by relieving parent guilt — shifts blame from child to environment</li>
+        <li><span class="why-check">✓</span> Reframes concentration as teachable, not innate — creates hope and agency</li>
+        <li><span class="why-check">✓</span> Bilingual delivery feels natural, not translated</li>
+        <li><span class="why-check">✓</span> CTA is brand-building, not promotional — earns trust before selling</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModalDirect(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModal(e, id) {
+  if (e.target === document.getElementById('modal-' + id)) closeModalDirect(id);
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => {
+      m.classList.remove('open');
+    });
+    document.body.style.overflow = '';
+  }
+});
+</script>
+</body>
+</html>
